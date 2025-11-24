@@ -1,0 +1,21 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+@keyframes wave {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(0,150,255,0.4);
+    border-color: rgba(0,150,255,0.2);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(0,150,255,0.9);
+    border-color: rgba(0,150,255,0.8);
+  }
+}
+
+.wave {
+  animation: wave 2s infinite ease-in-out;
+}
