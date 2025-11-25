@@ -19,17 +19,19 @@ const projects: Project[] = [
   },
   {
     title: "Clon de Twitter",
-    description: "Clon real y funcional de Twitter (X) hecho con React Native y un backend en Python + PostgreSQL.",
+    description:
+      "Clon real y funcional de Twitter (X) hecho con React Native y un backend en Python + PostgreSQL.",
     technologies: ["Python", "React Native", "PostgreSQL"],
   },
 ];
 
 export default function RecentWork() {
   return (
-    <section className="flex flex-col items-centerbg-slate-200 p-10" id="projects">
-      <div className="flex flex-col gap-6 w-140 ml-42 mb-10">
-        <p>Proyectos</p>
-        <h2 className="text-3xl font-bold">Proyectos Destacados</h2>
+    <section className="flex flex-col items-center bg-slate-200 p-6 md:p-10" id="projects">
+      {/* Texto introductorio */}
+      <div className="flex flex-col gap-6 w-full md:w-140 md:ml-42 mb-10 text-center md:text-left">
+        <p className="uppercase tracking-wide text-gray-600">Proyectos</p>
+        <h2 className="text-2xl md:text-3xl font-bold">Proyectos Destacados</h2>
         <p className="text-gray-700">
           Descubre algunos de los proyectos más destacados que he desarrollado
           como freelance full stack developer. Cada uno está diseñado para
@@ -39,7 +41,8 @@ export default function RecentWork() {
         </p>
       </div>
 
-      <div className="relative border-l-4 border-indigo-500 pl-6 space-y-12">
+      {/* Timeline */}
+      <div className="relative border-l-4 border-indigo-500 pl-6 space-y-12 w-full md:w-auto">
         {projects.map((project) => (
           <div key={project.title} className="relative">
             {/* Punto del timeline */}
@@ -47,7 +50,7 @@ export default function RecentWork() {
 
             {/* Contenido */}
             <div className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition">
-              <h3 className="text-xl font-semibold text-indigo-600 mb-2">
+              <h3 className="text-lg md:text-xl font-semibold text-indigo-600 mb-2">
                 {project.title}
               </h3>
               <p className="text-gray-700 mb-4">{project.description}</p>
