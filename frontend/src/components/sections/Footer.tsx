@@ -1,4 +1,5 @@
 import { useState } from "react";
+import '../../App.css'
 
 export default function Footer() {
   const [formData, setFormData] = useState({
@@ -19,7 +20,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-linear-to-r from-indigo-600 via-purple-600 to-pink-600 text-white py-12 px-6">
+    <footer className="bg-slate-100 text-black py-12 px-6">
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
         
         {/* Información */}
@@ -30,14 +31,14 @@ export default function Footer() {
             completa el formulario y te responderé lo antes posible.
           </p>
           <div className="flex gap-4 mt-6">
-            <a href="https://twitter.com" target="_blank" className="hover:text-yellow-300 transition">
-              🐦 Twitter
+            <a href="https://twitter.com" target="_blank" className="hover:text-blue-600 transition">
+              <i className="fa-brands fa-square-x-twitter" id="icon"></i>
             </a>
-            <a href="https://github.com" target="_blank" className="hover:text-yellow-300 transition">
-              💻 GitHub
+            <a href="https://github.com" target="_blank" className="hover:text-blue-600 transition">
+              <i className="fa-brands fa-github" id="icon"></i>
             </a>
-            <a href="mailto:tuemail@ejemplo.com" className="hover:text-yellow-300 transition">
-              📧 Email
+            <a href="mailto:tuemail@ejemplo.com" className="hover:text-blue-600 transition">
+              <i className="fa-solid fa-message" id="icon"></i>
             </a>
           </div>
         </div>

@@ -5,6 +5,10 @@
     font-family: 'Lato', sans-serif;
 }
 
+#icon {
+  font-size: 35px;
+}
+
 @keyframes wave {
   0%, 100% {
     box-shadow: 0 0 10px rgba(0,150,255,0.4);
