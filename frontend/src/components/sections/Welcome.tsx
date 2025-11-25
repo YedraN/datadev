@@ -21,7 +21,7 @@ function Welcome() {
                         <button className="bg-blue-600 px-4 py-2.5 rounded-lg font-bold text-white transition duration-300 hover:-translate-2 hover:cursor-pointer">
                             🚀 Trabaja conmigo
                         </button>
-                        <a href="/" className="text-blue-600 font-bold">
+                        <a href="https://juanjo-yedra.netlify.app/" className="text-blue-600 font-bold">
                             Ver mi portfolio ➤
                         </a>
                     </div>

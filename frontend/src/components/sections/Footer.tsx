@@ -14,18 +14,17 @@ export default function Footer() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Aquí podrías integrar con EmailJS, Formspree, etc.
     alert("¡Gracias por tu mensaje! 🚀");
     setFormData({ name: "", email: "", message: "" });
   };
 
   return (
-    <footer className="bg-slate-100 text-black py-12 px-6">
+    <footer className="bg-slate-100 text-black py-12 px-6" id="contact">
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12">
         
         {/* Información */}
         <div>
-          <h2 className="text-3xl font-bold mb-4">💬 Contáctame</h2>
+          <h2 className="text-3xl font-bold mb-4">Contáctame</h2>
           <p className="text-lg mb-6">
             Si tienes alguna idea, proyecto o simplemente quieres saludar, 
             completa el formulario y te responderé lo antes posible.

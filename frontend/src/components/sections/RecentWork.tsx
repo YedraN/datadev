@@ -6,27 +6,27 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Portfolio Website",
+    title: "Pokedex",
     description:
-      "Un sitio web personal para mostrar mis trabajos y habilidades.",
-    technologies: ["React", "TailwindCSS", "Vite"],
+      "Pokedex interactiva hecha con React y Python que consume la API de PokeAPI devolviendo los pokemons que se consulten con todos sus datos.",
+    technologies: ["React", "TailwindCSS", "Python"],
   },
   {
-    title: "E-commerce App",
+    title: "E-commerce",
     description:
-      "Aplicación de comercio electrónico con carrito de compras y pasarela de pago.",
-    technologies: ["Next.js", "Stripe", "MongoDB"],
+      "Aplicación de un supermercado con carrito y pasarela de pago hecha mediante Stripe. Construida con React y Next.js.",
+    technologies: ["React", "Next.js", "Stripe", "MongoDB"],
   },
   {
-    title: "Chat Application",
-    description: "App de mensajería en tiempo real con autenticación.",
-    technologies: ["Node.js", "Socket.io", "PostgreSQL"],
+    title: "Clon de Twitter",
+    description: "Clon real y funcional de Twitter (X) hecho con React Native y un backend en Python + PostgreSQL.",
+    technologies: ["Python", "React Native", "PostgreSQL"],
   },
 ];
 
 export default function RecentWork() {
   return (
-    <section className="flex flex-col items-centerbg-slate-200 p-10">
+    <section className="flex flex-col items-centerbg-slate-200 p-10" id="projects">
       <div className="flex flex-col gap-6 w-140 ml-42 mb-10">
         <p>Proyectos</p>
         <h2 className="text-3xl font-bold">Proyectos Destacados</h2>

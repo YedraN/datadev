@@ -1,9 +1,12 @@
 import Card from "../Card"
+import landing from '../../assets/landing-example.jpg'
+import hosting from '../../assets/hosting.png'
+import automatizacion from '../../assets/automatizacion.avif'
 
 function Services () {
     return (
         <>
-            <div className="flex justify-center min-h-screen bg-slate-100 p-10 pb-20">
+            <div className="flex justify-center min-h-screen bg-slate-100 p-10 pb-20" id="services">
                 <div className="w-[80%] mt-4">
                     <div id="text" className="flex flex-col gap-6 w-140 mb-4">
                         <p className="uppercase tracking-wide text-gray-600">Servicios</p>
@@ -19,9 +22,9 @@ function Services () {
                     </div>
                     <div className="flex justify-center w-full">
                         <div id="cards" className="flex gap-12">
-                            <Card />
-                            <Card />
-                            <Card />
+                            <Card title="Aplicaciones web a medida" description="Creamos soluciones adaptadas a las necesidades de tu negocio, desde portales corporativos hasta plataformas de ecommerce." image={landing}/>
+                            <Card title="Conectividad y Automatización" description="Integramos tus sistemas con APIs externas para optimizar procesos y reducir tareas manuales." image={automatizacion}/>
+                            <Card title="Hosting Seguro y Escalable" description="Ofrecemos alojamiento confiable con soporte técnico y mantenimiento continuo para garantizar el rendimiento de tu web." image={hosting}/>
                         </div>
                     </div>
                 </div>

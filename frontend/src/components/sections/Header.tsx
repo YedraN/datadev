@@ -9,10 +9,10 @@ function Header() {
                 <div className="flex w-[60%] items-center">
                     <nav>
                         <ul className="flex gap-[30%]">
-                            <li className="transition duration-300 hover:cursor-pointer hover:-translate-y-2">Home</li>
-                            <li className="opacity-75 transition duration-300 hover:cursor-pointer hover:-translate-y-2">Services</li>
-                            <li className="opacity-75 transition duration-300 hover:cursor-pointer hover:-translate-y-2">Projects</li>
-                            <li className="opacity-75 transition duration-300 hover:cursor-pointer hover:-translate-y-2">Contact</li>
+                            <li className="transition duration-300 hover:cursor-pointer hover:-translate-y-2"><a href="/">Home</a></li>
+                            <li className="opacity-75 transition duration-300 hover:cursor-pointer hover:-translate-y-2"><a href="#services">Servicios</a></li>
+                            <li className="opacity-75 transition duration-300 hover:cursor-pointer hover:-translate-y-2"><a href="#projects">Proyectos</a></li>
+                            <li className="opacity-75 transition duration-300 hover:cursor-pointer hover:-translate-y-2"><a href="#contact">Contacto</a></li>
                         </ul>
                     </nav>
                     <div className="ml-[30%]">
