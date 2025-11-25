@@ -20,6 +20,36 @@
   }
 }
 
+@keyframes float {
+  0% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-20px) translateX(10px); }
+  100% { transform: translateY(0px) translateX(0px); }
+}
+
+@keyframes float-slow {
+  0% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-30px) translateX(-15px); }
+  100% { transform: translateY(0px) translateX(0px); }
+}
+
+@keyframes float-rev {
+  0% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(20px) translateX(-10px); }
+  100% { transform: translateY(0px) translateX(0px); }
+}
+
 .wave {
   animation: wave 2s infinite ease-in-out;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 10s ease-in-out infinite;
+}
+
+.animate-float-rev {
+  animation: float-rev 7s ease-in-out infinite;
 }
