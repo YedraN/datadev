@@ -123,6 +123,16 @@ const ServiceCard: React.FC<ServiceProps> = ({
   description,
   features,
 }) => {
+  const handleCheckout = async (priceId: string) => {
+    const res = await fetch("/.netlify/functions/create-checkout-session", {
+      method: "POST",
+      body: JSON.stringify({ priceId }),
+    });
+
+    const data = await res.json();
+    window.location.href = data.url; // redirige al checkout de Stripe
+  };
+
   return (
     <div className="bg-white/80 backdrop-blur-xl border border-gray-200 rounded-3xl shadow-xl p-10 hover:shadow-[0_10px_40px_rgba(0,0,0,0.15)] transition cursor-pointer">
       {/* ICONO */}
@@ -154,7 +164,10 @@ const ServiceCard: React.FC<ServiceProps> = ({
       </ul>
 
       {/* CTA */}
-      <button className="mt-8 w-full bg-blue-600 text-white font-semibold py-3 rounded-xl hover:bg-blue-700 transition shadow-md">
+      <button
+        onClick={() => handleCheckout("price123abc")}
+        className="mt-8 w-full bg-blue-600 text-white font-semibold py-3 rounded-xl hover:bg-blue-700 transition shadow-md"
+      >
         Contratar
       </button>
     </div>
