@@ -40,7 +40,7 @@ const Dashboard: React.FC = () => {
             "Diseño profesional",
             "100% a medida",
           ]}
-          priceId="price_1SXQrJKQk68iYh93SphFvLAk"
+          priceId="price_1SXRxwKyAMyE9o5MZ2TH1ehj"
         />
 
         <ServiceCard
@@ -54,7 +54,7 @@ const Dashboard: React.FC = () => {
             "Integración con IA",
             "Scripts en Python",
           ]}
-          priceId="price_1SXQriKQk68iYh93B61xxrm6"
+          priceId="price_1SXRyFKyAMyE9o5Mva6NNe4E"
         />
 
         <ServiceCard
@@ -68,7 +68,7 @@ const Dashboard: React.FC = () => {
             "Escalable",
             "Soporte continuo",
           ]}
-          priceId="price_1SXQtGKQk68iYh93Cxnh2A2y"
+          priceId="price_1SXRyXKyAMyE9o5MBSKU8u8A"
         />
       </div>
 
