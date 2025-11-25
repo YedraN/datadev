@@ -10,6 +10,9 @@ createRoot(document.getElementById('root')!).render(
       clientId="cu3dP16KaJdElJxNKyaTjEPupeScht3p"
       authorizationParams={{
         redirect_uri: window.location.origin
+      }}
+      onRedirectCallback={(appState) => {
+        window.location.replace(appState?.returnTo || "/dashboard")
       }}>
       <App />
     </Auth0Provider>

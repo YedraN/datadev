@@ -5,6 +5,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import HomeScreen from "./screens/HomeScreen";
 import AuthScreen from "./screens/AuthScreen";
+import Dashboard from "./screens/Dashboard";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -14,6 +15,7 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeScreen />} />
         <Route path="/login" element={<AuthScreen />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   );
