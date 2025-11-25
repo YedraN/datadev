@@ -126,6 +126,7 @@ const ServiceCard: React.FC<ServiceProps> = ({
   title,
   description,
   features,
+  priceId,
 }) => {
   const handleCheckout = async (priceId: string) => {
     const res = await fetch("/.netlify/functions/create-checkout-session", {
@@ -169,7 +170,7 @@ const ServiceCard: React.FC<ServiceProps> = ({
 
       {/* CTA */}
       <button
-        onClick={() => handleCheckout("price123abc")}
+        onClick={() => handleCheckout(priceId)}
         className="mt-8 w-full bg-blue-600 text-white font-semibold py-3 rounded-xl hover:bg-blue-700 transition shadow-md"
       >
         Contratar
