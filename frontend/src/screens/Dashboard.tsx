@@ -40,6 +40,7 @@ const Dashboard: React.FC = () => {
             "Diseño profesional",
             "100% a medida",
           ]}
+          priceId="prod_TUPgWFjitAltak"
         />
 
         <ServiceCard
@@ -53,6 +54,7 @@ const Dashboard: React.FC = () => {
             "Integración con IA",
             "Scripts en Python",
           ]}
+          priceId="prod_TUPhFVNks2FmTz"
         />
 
         <ServiceCard
@@ -66,6 +68,7 @@ const Dashboard: React.FC = () => {
             "Escalable",
             "Soporte continuo",
           ]}
+          priceId="prod_TUPiwmaGhv0e9p"
         />
       </div>
 
@@ -114,6 +117,7 @@ interface ServiceProps {
   title: string;
   description: string;
   features: string[];
+  priceId: string;
 }
 
 /* TARJETA PROFESIONAL */
