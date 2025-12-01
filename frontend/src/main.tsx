@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import { Auth0Provider } from '@auth0/auth0-react'
+import { HelmetProvider } from 'react-helmet-async'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -14,7 +15,9 @@ createRoot(document.getElementById('root')!).render(
       onRedirectCallback={(appState) => {
         window.location.replace(appState?.returnTo || "/dashboard")
       }}>
-      <App />
+      <HelmetProvider>
+        <App />
+      </HelmetProvider>
     </Auth0Provider>
   </StrictMode>,
 )

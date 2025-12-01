@@ -1,10 +1,15 @@
 import { useAuth0 } from "@auth0/auth0-react";
+import SEO from "../components/SEO";
 
 const AuthScreen: React.FC = () => {
   const { loginWithRedirect } = useAuth0();
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4">
+      <SEO
+        title="Iniciar Sesión - DataDev"
+        description="Inicia sesión en DataDev para acceder a tus servicios y proyectos."
+      />
       <div className="bg-white shadow-2xl rounded-2xl w-full max-w-md p-10">
 
         {/* Título */}
