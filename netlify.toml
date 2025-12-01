@@ -1,0 +1,16 @@
+[build]
+  # Build command
+  command = "npm install --legacy-peer-deps && npm run build"
+  
+  # Publish directory
+  publish = "frontend/dist"
+  
+  # Functions directory
+  functions = "frontend/netlify/functions"
+
+[build.environment]
+  # Use Node.js 22
+  NODE_VERSION = "22.21.1"
+  
+  # Set npm to use legacy peer deps by default
+  NPM_FLAGS = "--legacy-peer-deps"
