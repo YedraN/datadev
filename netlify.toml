@@ -1,12 +1,15 @@
 [build]
+  # Base directory for the build
+  base = "frontend"
+  
   # Build command
   command = "npm install --legacy-peer-deps && npm run build"
   
-  # Publish directory
-  publish = "frontend/dist"
+  # Publish directory (relative to base)
+  publish = "dist"
   
-  # Functions directory
-  functions = "frontend/netlify/functions"
+  # Functions directory (relative to base)
+  functions = "netlify/functions"
 
 [build.environment]
   # Use Node.js 22
