@@ -84,7 +84,7 @@ const Dashboard: React.FC = () => {
       <div className="relative z-10 max-w-4xl mx-auto bg-slate-800/50 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-8 md:p-12 text-center">
         <h3 className="text-2xl font-bold text-white mb-4">¿Tienes dudas o necesitas algo específico?</h3>
         <p className="text-slate-400 mb-8">Hablemos directamente. Estamos aquí para ayudarte a tomar la mejor decisión.</p>
-        
+
         <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12">
           <a href="tel:+34682373824" className="group flex items-center gap-3 text-slate-300 hover:text-white transition-colors">
             <div className="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center group-hover:bg-blue-600 transition-colors">
@@ -92,7 +92,7 @@ const Dashboard: React.FC = () => {
             </div>
             <span className="font-medium">(+34) 682 37 38 24</span>
           </a>
-          
+
           <div className="hidden md:block w-px h-10 bg-slate-700"></div>
 
           <a href="mailto:juanjo@datadev.es" className="group flex items-center gap-3 text-slate-300 hover:text-white transition-colors">
@@ -132,24 +132,23 @@ const ServiceCard: React.FC<ServiceProps> = ({
     try {
       const res = await fetch("/.netlify/functions/create-checkout-session", {
         method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ priceId }),
       });
+
       const data = await res.json();
-      if (data.url) {
-        window.location.href = data.url;
-      } else {
-        console.error("No URL returned from checkout session");
-      }
+      if (data.url) window.location.href = data.url;
     } catch (error) {
-      console.error("Error creating checkout session:", error);
+      console.error(error);
     }
   };
 
+
   return (
-    <div 
+    <div
       className={`relative group flex flex-col h-full p-8 rounded-3xl border transition-all duration-500 hover:-translate-y-2
-        ${featured 
-          ? "bg-slate-800/80 border-blue-500/50 shadow-[0_0_40px_rgba(59,130,246,0.15)] hover:shadow-[0_0_60px_rgba(59,130,246,0.25)]" 
+        ${featured
+          ? "bg-slate-800/80 border-blue-500/50 shadow-[0_0_40px_rgba(59,130,246,0.15)] hover:shadow-[0_0_60px_rgba(59,130,246,0.25)]"
           : "bg-slate-800/40 border-slate-700/50 hover:bg-slate-800/60 hover:border-slate-600 shadow-xl"
         } backdrop-blur-xl`}
       style={{ animationDelay: `${delay}ms` }}
