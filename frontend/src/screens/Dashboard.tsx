@@ -1,9 +1,21 @@
 import { useAuth0 } from "@auth0/auth0-react";
+import { useEffect, useState } from "react";
 import SEO from "../components/SEO";
 import "../App.css";
 
 const Dashboard: React.FC = () => {
   const { user } = useAuth0();
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+
+  // Detectar si el usuario regresa después de un pago exitoso
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === 'true') {
+      setShowSuccessModal(true);
+      // Limpiar el parámetro de la URL sin recargar la página
+      window.history.replaceState({}, '', '/dashboard');
+    }
+  }, []);
 
   return (
     <div className="relative min-h-screen px-6 py-20 overflow-hidden bg-slate-900 font-sans selection:bg-blue-500 selection:text-white">
@@ -103,6 +115,78 @@ const Dashboard: React.FC = () => {
           </a>
         </div>
       </div>
+
+      {/* SUCCESS MODAL */}
+      {showSuccessModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center px-4 bg-black/60 backdrop-blur-sm">
+          <div className="relative max-w-md w-full bg-slate-800 border border-slate-700 rounded-3xl p-8 shadow-2xl">
+            {/* Close button */}
+            <button
+              onClick={() => setShowSuccessModal(false)}
+              className="absolute top-4 right-4 w-8 h-8 rounded-full bg-slate-700 hover:bg-slate-600 flex items-center justify-center transition-colors"
+              aria-label="Cerrar"
+            >
+              <svg className="w-4 h-4 text-slate-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* Success icon */}
+            <div className="mb-6 flex justify-center">
+              <div className="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center">
+                <svg className="w-8 h-8 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+            </div>
+
+            {/* Title */}
+            <h2 className="text-2xl font-bold text-white text-center mb-3">
+              ¡Pago Completado con Éxito!
+            </h2>
+
+            {/* Message */}
+            <p className="text-slate-300 text-center mb-8 leading-relaxed">
+              Gracias por tu compra. Me pondré en contacto contigo muy pronto para comenzar con tu proyecto.
+            </p>
+
+            {/* Contact info */}
+            <div className="space-y-4 mb-6">
+              <div className="flex items-center gap-3 p-4 rounded-xl bg-slate-700/50 border border-slate-600">
+                <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                  <span className="text-xl">📞</span>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-400 mb-1">Teléfono</p>
+                  <a href="tel:+34682373824" className="text-white font-medium hover:text-blue-400 transition-colors">
+                    (+34) 682 37 38 24
+                  </a>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 p-4 rounded-xl bg-slate-700/50 border border-slate-600">
+                <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                  <span className="text-xl">📧</span>
+                </div>
+                <div>
+                  <p className="text-xs text-slate-400 mb-1">Email</p>
+                  <a href="mailto:juanjo@datadev.es" className="text-white font-medium hover:text-blue-400 transition-colors">
+                    juanjo@datadev.es
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Close button */}
+            <button
+              onClick={() => setShowSuccessModal(false)}
+              className="w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold transition-all duration-300 shadow-lg hover:shadow-blue-500/25"
+            >
+              Entendido
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
