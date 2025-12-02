@@ -1,19 +1,15 @@
 [build]
-  # Base directory for the build
   base = "frontend"
-  
-  # Build command
   command = "npm install --legacy-peer-deps && npm run build"
-  
-  # Publish directory (relative to base)
   publish = "dist"
-  
-  # Functions directory (relative to base)
   functions = "netlify/functions"
 
 [build.environment]
-  # Use Node.js 22
   NODE_VERSION = "22.21.1"
-  
-  # Set npm to use legacy peer deps by default
   NPM_FLAGS = "--legacy-peer-deps"
+
+[[redirects]]
+  from = "/*"
+  to = "https://www.datadev.es/:splat"
+  status = 301
+  force = true
