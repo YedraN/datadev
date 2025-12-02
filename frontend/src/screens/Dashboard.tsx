@@ -137,9 +137,17 @@ const ServiceCard: React.FC<ServiceProps> = ({
       });
 
       const data = await res.json();
-      if (data.url) window.location.href = data.url;
+
+      if (res.ok && data.url) {
+        window.location.href = data.url;
+      } else {
+        // Mostrar error específico
+        console.error("Error al crear sesión de checkout:", data);
+        alert(`Error: ${data.error || data.message || "No se pudo crear la sesión de checkout. Por favor, contacta con soporte."}`);
+      }
     } catch (error) {
-      console.error(error);
+      console.error("Error de red:", error);
+      alert("Error de conexión. Por favor, verifica tu conexión a internet e intenta nuevamente.");
     }
   };
 
